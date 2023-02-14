@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Search</string>
+    <string name="close_search">Close Search</string>
+    <string name="open_search">Open Search</string>
+    <string name="all_notes">All Notes</string>
+    <string name="add_note">Add Note</string>
+    <string name="delete_note">Delete Note</string>
+    <string name="unsaved_changes">Unsaved Changes</string>
+    <string name="unsaved_changes_description">Unsaved changes detected. Save before quitting?</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="discard_changes">Discard Changes</string>
+    <string name="create_note">Create Note</string>
+    <string name="edit_note">Edit Note</string>
+    <string name="save_note">Save note</string>
+    <string name="title">Title</string>
+    <string name="start_typing">Start typing…</string>
+</resources>
