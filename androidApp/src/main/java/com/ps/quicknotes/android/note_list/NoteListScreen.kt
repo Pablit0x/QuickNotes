@@ -7,14 +7,11 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.List
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,6 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.ps.quicknotes.android.R
 import com.ps.quicknotes.android.core.presentation.Routes
+import com.ps.quicknotes.android.core.theme.ForestGreenHex
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -46,8 +44,8 @@ fun NoteListScreen(
             onClick = {
                 navController.navigate( Routes.NoteDetail + "/-1L")
             },
-            backgroundColor = MaterialTheme.colors.primary,
-            contentColor = MaterialTheme.colors.onPrimary
+            backgroundColor = ForestGreenHex,
+            contentColor = Color.White
         ) {
             Icon(
                 imageVector = Icons.Default.Add,
@@ -78,7 +76,7 @@ fun NoteListScreen(
                     visible = !state.isSearchActive, enter = fadeIn(), exit = fadeOut()
                 ) {
                     Text(
-                        text = stringResource(id = R.string.all_notes), fontFamily = FontFamily.Serif, fontWeight = FontWeight.Bold, fontSize = 30.sp
+                        text = stringResource(id = R.string.all_notes), fontFamily = FontFamily.Cursive, fontWeight = FontWeight.Bold, fontSize = 30.sp
                     )
                 }
             }

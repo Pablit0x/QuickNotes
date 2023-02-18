@@ -4,10 +4,12 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -24,7 +26,7 @@ import com.ps.quicknotes.android.core.theme.*
 @ExperimentalMaterialApi
 @Composable
 fun NoteColorSelector(
-    cardColor: Color, onColorChange: (Color) -> Unit, padding: Dp = 12.dp
+    cardColor: Color, onColorChange: (Color) -> Unit
 ) {
     var expandedState by remember { mutableStateOf(false) }
     val interactionSource = remember { MutableInteractionSource() }
@@ -42,51 +44,50 @@ fun NoteColorSelector(
             expandedState = !expandedState
         }) {
         Column(
-            modifier = Modifier.padding(padding)
         ) {
             if (!expandedState) {
                 Box(
                     modifier = Modifier
-                        .size(48.dp)
+                        .padding(4.dp)
+                        .size(55.dp)
                         .background(cardColor, shape = CircleShape)
+                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                 )
             }
             if (expandedState) {
-                Row {
-                    IconButton(onClick = { expandedState = !expandedState }) {
-                        Icon(
-                            imageVector = Icons.Default.Close,
-                            contentDescription = "",
-                            tint = MaterialTheme.colors.onSurface,
-                            modifier = Modifier
-                                .padding(top = 8.dp, end = 8.dp)
-                                .size(48.dp)
+                Row(
+                    modifier = Modifier
+                        .background(
+                            MaterialTheme.colors.secondary, shape = RoundedCornerShape(25.dp)
                         )
-                    }
+                ) {
                     Box(modifier = Modifier
-                        .padding(top = 8.dp, end = 8.dp)
+                        .padding(4.dp)
                         .size(48.dp)
-                        .background(YellowHex, shape = CircleShape)
+                        .background(ForestGreenHex, shape = CircleShape)
+                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {
-                            onColorChange(YellowHex)
+                            onColorChange(ForestGreenHex)
                             expandedState = !expandedState
                         })
                     Box(modifier = Modifier
-                        .padding(top = 8.dp, end = 8.dp)
+                        .padding(4.dp)
                         .size(48.dp)
-                        .background(PeachHex, shape = CircleShape)
+                        .background(DarkBlueHex, shape = CircleShape)
+                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {
-                            onColorChange(PeachHex)
+                            onColorChange(DarkBlueHex)
                             expandedState = !expandedState
                         })
                     Box(modifier = Modifier
-                        .padding(top = 8.dp, end = 8.dp)
+                        .padding(4.dp)
                         .size(48.dp)
                         .background(OrangeHex, shape = CircleShape)
+                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {
@@ -94,9 +95,10 @@ fun NoteColorSelector(
                             expandedState = !expandedState
                         })
                     Box(modifier = Modifier
-                        .padding(top = 8.dp, end = 8.dp)
+                        .padding(4.dp)
                         .size(48.dp)
                         .background(PinkRedHex, shape = CircleShape)
+                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {
@@ -104,15 +106,26 @@ fun NoteColorSelector(
                             expandedState = !expandedState
                         })
                     Box(modifier = Modifier
-                        .padding(top = 8.dp)
+                        .padding(4.dp)
                         .size(48.dp)
                         .background(PurpleHex, shape = CircleShape)
+                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {
                             onColorChange(PurpleHex)
                             expandedState = !expandedState
                         })
+                    IconButton(onClick = { expandedState = !expandedState }) {
+                        Icon(
+                            imageVector = Icons.Default.Close,
+                            contentDescription = "",
+                            tint = MaterialTheme.colors.onSurface,
+                            modifier = Modifier
+                                .padding(4.dp)
+                                .size(48.dp)
+                        )
+                    }
                 }
             }
         }

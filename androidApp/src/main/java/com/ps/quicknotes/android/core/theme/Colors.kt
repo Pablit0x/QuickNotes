@@ -15,8 +15,8 @@ val NormalGrey = Color(Colors.NormalGrey)
 val DarkSurfaceStart = Color(Colors.DarkSurfaceStart)
 val DarkSurfaceEnd = Color(Colors.DarkSurfaceEnd)
 
-val YellowHex = Color(Colors.YellowHex)
-val PeachHex = Color(Colors.PeachHex)
+val ForestGreenHex = Color(Colors.ForestGreenHex)
+val DarkBlueHex = Color(Colors.DarkBlueHex)
 val OrangeHex = Color(Colors.OrangeHex)
 val PinkRedHex = Color(Colors.PinkRedHex)
 val PurpleHex = Color(Colors.PurpleHex)
@@ -29,7 +29,8 @@ val lightColors = lightColors(
     onPrimary = Color.White,
     onBackground = TextBlack,
     surface = Color.White,
-    onSurface = TextBlack
+    onSurface = TextBlack,
+    secondaryVariant = NormalGrey
 )
 
 val darkColors = lightColors(
@@ -40,5 +41,6 @@ val darkColors = lightColors(
     onPrimary = Color.White,
     onBackground = Color.White,
     surface = DarkGrey,
-    onSurface = Color.White
+    onSurface = Color.White,
+    secondaryVariant = LightBlue
 )

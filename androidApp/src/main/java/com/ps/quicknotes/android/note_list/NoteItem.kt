@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
@@ -57,7 +58,7 @@ fun NoteItem(
         Text(text = note.content, fontWeight = FontWeight.Light)
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            text = formattedDate, color = Color.LightGray, modifier = Modifier.align(Alignment.End)
+            text = formattedDate, color = MaterialTheme.colors.secondaryVariant, modifier = Modifier.align(Alignment.End)
         )
     }
 }

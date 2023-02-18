@@ -11,9 +11,9 @@ object Colors {
     const val DarkSurfaceStart = 0xFF23262E
     const val DarkSurfaceEnd = 0xFF212329
 
-    const val YellowHex = 0xFFF7E319
-    const val PeachHex = 0xFFFFE4B5
+    const val ForestGreenHex = 0xFF2B7F5C
+    const val DarkBlueHex = 0xFF00008B
     const val OrangeHex = 0xFFF5A623
-    const val PinkRedHex = 0xFFff0080
+    const val PinkRedHex = 0xFFFF0080
     const val PurpleHex = 0xFF9B30FF
 }

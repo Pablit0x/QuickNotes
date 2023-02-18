@@ -28,7 +28,7 @@ class NoteDetailViewModel @Inject constructor(
         noteContent,
         isNoteContentFocused,
         noteColor
-    ) { title, isTitleFocused, content, isContentFocused, color ->
+    ) { title, _, content, _, color ->
         NoteDetailState(
             noteTitle = title,
             isNoteTitleHintDisplayed = title.isEmpty(),

@@ -9,6 +9,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
@@ -19,6 +20,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.ps.quicknotes.android.*
+import com.ps.quicknotes.android.R
 import com.ps.quicknotes.android.note_list.gradientSurface
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -38,15 +41,20 @@ fun NoteDetailScreen(
             navController.popBackStack()
         }
     }
-    var topBarTitle by remember { mutableStateOf("") }
 
-    topBarTitle = if (noteId == -1L) {
-        stringResource(id = com.ps.quicknotes.android.R.string.create_note)
+    val topBarTitle = if (noteId == -1L) {
+        stringResource(id = R.string.create_note)
     } else {
-        stringResource(id = com.ps.quicknotes.android.R.string.edit_note)
+        stringResource(id = R.string.edit_note)
     }
 
     Scaffold(
+        floatingActionButton = {
+            NoteColorSelector(cardColor = Color(state.noteColor), onColorChange = {
+                noteColor = it.toArgb().toLong()
+                viewModel.onNoteColorChange(noteColor)
+            })
+        },
 
         topBar = {
             TopAppBar(title = {
@@ -67,7 +75,7 @@ fun NoteDetailScreen(
                     }) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "Navigate Back"
+                            contentDescription = stringResource(id = R.string.navigate_back)
                         )
                     }
                 },
@@ -78,7 +86,7 @@ fun NoteDetailScreen(
                         IconButton(onClick = viewModel::saveNote) {
                             Icon(
                                 imageVector = Icons.Default.Check,
-                                contentDescription = stringResource(id = com.ps.quicknotes.android.R.string.save_note),
+                                contentDescription = stringResource(id = R.string.save_note),
                                 tint = MaterialTheme.colors.onSurface
                             )
                         }
@@ -94,7 +102,7 @@ fun NoteDetailScreen(
         ) {
             TextHint(
                 text = state.noteTitle,
-                hint = stringResource(id = com.ps.quicknotes.android.R.string.title),
+                hint = stringResource(id = R.string.title),
                 isHintVisible = state.isNoteTitleHintDisplayed,
                 onValueChanged = {
                     if (it.length <= 200) {
@@ -119,7 +127,7 @@ fun NoteDetailScreen(
             Spacer(modifier = Modifier.height(16.dp))
             TextHint(
                 text = state.noteContent,
-                hint = stringResource(id = com.ps.quicknotes.android.R.string.start_typing),
+                hint = stringResource(id = R.string.start_typing),
                 isHintVisible = state.isNoteContentHintDisplayed,
                 onValueChanged = viewModel::onNoteContentChanged,
                 onFocusChanged = {
@@ -131,14 +139,8 @@ fun NoteDetailScreen(
                     .weight(1f)
                     .padding(16.dp)
             )
-
-            NoteColorSelector(cardColor = Color(state.noteColor), onColorChange = {
-                noteColor = it.toArgb().toLong()
-                viewModel.onNoteColorChange(noteColor)
-            })
             if (showDialog) {
-                UnsavedChangesDialog(
-                    closeDialog = { showDialog = false },
+                UnsavedChangesDialog(closeDialog = { showDialog = false },
                     saveChanges = { viewModel.saveNote() },
                     navController = navController
                 )

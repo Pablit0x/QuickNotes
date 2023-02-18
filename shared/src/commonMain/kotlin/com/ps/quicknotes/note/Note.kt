@@ -11,7 +11,7 @@ data class Note(
     val created: LocalDateTime
 ) {
     companion object {
-        private val colors = listOf(Colors.YellowHex, Colors.PeachHex, Colors.OrangeHex, Colors.PinkRedHex, Colors.PurpleHex)
+        private val colors = listOf(Colors.ForestGreenHex, Colors.DarkBlueHex, Colors.OrangeHex, Colors.PinkRedHex, Colors.PurpleHex)
 
         fun getRandomColor() = colors.random()
     }

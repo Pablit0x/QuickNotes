@@ -7,10 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
@@ -23,6 +20,7 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.ps.quicknotes.android.R
+import com.ps.quicknotes.android.core.theme.ForestGreenHex
 
 @Composable
 fun SearchTextField(
@@ -44,6 +42,8 @@ fun SearchTextField(
                 value = text,
                 onValueChange = onTextChange,
                 shape = RoundedCornerShape(50.dp),
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    focusedBorderColor = ForestGreenHex),
                 placeholder = { Text(text = stringResource(id = R.string.search)) },
                 modifier = Modifier
                     .fillMaxWidth()
