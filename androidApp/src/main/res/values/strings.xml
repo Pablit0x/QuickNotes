@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Quick Notes</string>
     <string name="search">Search</string>
     <string name="close_search">Close Search</string>
     <string name="open_search">Open Search</string>
