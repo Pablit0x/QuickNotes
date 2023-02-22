@@ -10,7 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.ps.quicknotes.android.core.presentation.Routes
+import com.ps.quicknotes.android.core.navigation.Routes
 import com.ps.quicknotes.android.note_detail.NoteDetailScreen
 import com.ps.quicknotes.android.note_list.NoteListScreen
 import dagger.hilt.android.AndroidEntryPoint

@@ -1,6 +1,7 @@
 package com.ps.quicknotes.android.note_detail
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -22,7 +23,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.ps.quicknotes.android.*
 import com.ps.quicknotes.android.R
-import com.ps.quicknotes.android.note_list.gradientSurface
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -95,7 +95,6 @@ fun NoteDetailScreen(
         }) { padding ->
         Column(
             modifier = Modifier
-                .gradientSurface()
                 .fillMaxSize()
                 .padding(padding)
                 .padding(16.dp)
@@ -114,17 +113,15 @@ fun NoteDetailScreen(
                 },
                 singleLine = false,
                 textStyle = TextStyle(
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Medium,
                     color = MaterialTheme.colors.onSurface
                 ),
                 modifier = Modifier
-                    .border(
-                        width = 3.dp, color = Color(noteColor), shape = RoundedCornerShape(25.dp)
-                    )
-                    .padding(16.dp)
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(8.dp))
+            Divider(Modifier.height(1.dp).fillMaxWidth().background(MaterialTheme.colors.secondary))
+            Spacer(modifier = Modifier.height(8.dp))
             TextHint(
                 text = state.noteContent,
                 hint = stringResource(id = R.string.start_typing),
@@ -137,7 +134,6 @@ fun NoteDetailScreen(
                 textStyle = TextStyle(fontSize = 20.sp, color = MaterialTheme.colors.onSurface),
                 modifier = Modifier
                     .weight(1f)
-                    .padding(16.dp)
             )
             if (showDialog) {
                 UnsavedChangesDialog(closeDialog = { showDialog = false },

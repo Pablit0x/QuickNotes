@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,7 +13,7 @@ import androidx.compose.ui.focus.FocusState
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import com.ps.quicknotes.android.core.theme.LightBlue
+import com.ps.quicknotes.android.core.presentation.LightBlue
 
 @Composable
 fun TextHint(
@@ -34,7 +35,7 @@ fun TextHint(
                 .fillMaxWidth()
                 .onFocusChanged { isFocused -> onFocusChanged(isFocused) })
         if (isHintVisible) {
-            Text(text = hint, style = textStyle, color = LightBlue)
+            Text(text = hint, style = textStyle, color = MaterialTheme.colors.secondary)
         }
         Spacer(modifier = Modifier.height(16.dp))
     }

@@ -1,4 +1,4 @@
-package com.ps.quicknotes.android.core.presentation
+package com.ps.quicknotes.android.core.navigation
 
 object Routes {
     const val NoteList = "note_list"

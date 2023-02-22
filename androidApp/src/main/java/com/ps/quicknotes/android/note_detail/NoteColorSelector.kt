@@ -19,9 +19,8 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.ps.quicknotes.android.core.theme.*
+import com.ps.quicknotes.android.core.presentation.*
 
 @ExperimentalMaterialApi
 @Composable
@@ -48,24 +47,17 @@ fun NoteColorSelector(
             if (!expandedState) {
                 Box(
                     modifier = Modifier
-                        .padding(4.dp)
-                        .size(55.dp)
+                        .size(56.dp)
+                        .border(width = 1.dp, color = MaterialTheme.colors.onBackground, shape = CircleShape)
                         .background(cardColor, shape = CircleShape)
-                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                 )
             }
             if (expandedState) {
-                Row(
-                    modifier = Modifier
-                        .background(
-                            MaterialTheme.colors.secondary, shape = RoundedCornerShape(25.dp)
-                        )
-                ) {
+                Column{
                     Box(modifier = Modifier
                         .padding(4.dp)
                         .size(48.dp)
                         .background(ForestGreenHex, shape = CircleShape)
-                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {
@@ -76,7 +68,6 @@ fun NoteColorSelector(
                         .padding(4.dp)
                         .size(48.dp)
                         .background(DarkBlueHex, shape = CircleShape)
-                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {
@@ -87,7 +78,6 @@ fun NoteColorSelector(
                         .padding(4.dp)
                         .size(48.dp)
                         .background(OrangeHex, shape = CircleShape)
-                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {
@@ -98,7 +88,6 @@ fun NoteColorSelector(
                         .padding(4.dp)
                         .size(48.dp)
                         .background(PinkRedHex, shape = CircleShape)
-                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {
@@ -109,7 +98,6 @@ fun NoteColorSelector(
                         .padding(4.dp)
                         .size(48.dp)
                         .background(PurpleHex, shape = CircleShape)
-                        .border(width = 1.dp, color = MaterialTheme.colors.onSurface, shape = CircleShape)
                         .clickable(
                             interactionSource = interactionSource, indication = null
                         ) {

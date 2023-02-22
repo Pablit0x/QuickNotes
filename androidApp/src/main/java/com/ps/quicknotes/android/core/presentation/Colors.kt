@@ -1,4 +1,4 @@
-package com.ps.quicknotes.android.core.theme
+package com.ps.quicknotes.android.core.presentation
 
 import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color
@@ -37,7 +37,7 @@ val darkColors = lightColors(
     secondary = NormalGrey,
     onSecondary = Color.White,
     primary = AccentViolet,
-    background = DarkGrey,
+    background = Color.Black,
     onPrimary = Color.White,
     onBackground = Color.White,
     surface = DarkGrey,

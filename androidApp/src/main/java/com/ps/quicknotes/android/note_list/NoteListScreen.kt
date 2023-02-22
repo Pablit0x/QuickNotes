@@ -25,8 +25,8 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.ps.quicknotes.android.R
-import com.ps.quicknotes.android.core.presentation.Routes
-import com.ps.quicknotes.android.core.theme.ForestGreenHex
+import com.ps.quicknotes.android.core.navigation.Routes
+import com.ps.quicknotes.android.core.presentation.ForestGreenHex
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -44,13 +44,12 @@ fun NoteListScreen(
             onClick = {
                 navController.navigate( Routes.NoteDetail + "/-1L")
             },
-            backgroundColor = ForestGreenHex,
-            contentColor = Color.White
+            backgroundColor = MaterialTheme.colors.onBackground,
+            contentColor = MaterialTheme.colors.background
         ) {
             Icon(
                 imageVector = Icons.Default.Add,
-                contentDescription = stringResource(id = R.string.add_note),
-                tint = Color.White
+                contentDescription = stringResource(id = R.string.add_note)
             )
         }
     }) { padding ->
@@ -76,7 +75,7 @@ fun NoteListScreen(
                     visible = !state.isSearchActive, enter = fadeIn(), exit = fadeOut()
                 ) {
                     Text(
-                        text = stringResource(id = R.string.all_notes), fontFamily = FontFamily.Cursive, fontWeight = FontWeight.Bold, fontSize = 30.sp
+                        text = stringResource(id = R.string.all_notes), fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Medium, fontSize = 30.sp
                     )
                 }
             }
@@ -98,12 +97,12 @@ fun NoteListScreen(
                             .padding(16.dp)
                             .animateItemPlacement()
                             .clip(shape = RoundedCornerShape(25.dp))
-                            .gradientSurface()
                             .border(
                                 width = 3.dp,
                                 color = Color(note.colorHex),
                                 shape = RoundedCornerShape(25.dp)
                             )
+                            .gradientSurface()
                     )
                 }
             }

@@ -20,7 +20,7 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.ps.quicknotes.android.R
-import com.ps.quicknotes.android.core.theme.ForestGreenHex
+import com.ps.quicknotes.android.core.presentation.ForestGreenHex
 
 @Composable
 fun SearchTextField(
@@ -43,7 +43,8 @@ fun SearchTextField(
                 onValueChange = onTextChange,
                 shape = RoundedCornerShape(50.dp),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
-                    focusedBorderColor = ForestGreenHex),
+                    focusedBorderColor = MaterialTheme.colors.onBackground
+                ),
                 placeholder = { Text(text = stringResource(id = R.string.search)) },
                 modifier = Modifier
                     .fillMaxWidth()
