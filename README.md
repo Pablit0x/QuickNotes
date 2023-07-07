@@ -20,5 +20,3 @@ https://github.com/Pablit0x/TranslatePro/assets/76017191/791bdc48-b743-43f8-b783
 - **Note Search**: Users can quickly search for specific notes by title or content, enabling them to locate the information they need efficiently.
 
 ---
-
-Thank you for considering QuickNotes, the Kotlin Multiplatform Note App. It aims to simplify your note-taking process and enhance your productivity.
