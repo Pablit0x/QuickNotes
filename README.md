@@ -2,6 +2,11 @@
 
 The QuickNotes app is a mobile application built using Kotlin Multiplatform. It allows users to create, edit, and delete notes on both Android and iOS devices. The app offers a range of features to enhance the note-taking experience, including note color customization, note sorting, and note search capabilities. With the power of Kotlin Multiplatform, QuickNotes provides a seamless user experience across different platforms.
 
+https://github.com/Pablit0x/TranslatePro/assets/76017191/5a3b4d7e-e177-414a-b0ea-d76ddfa33570
+
+https://github.com/Pablit0x/TranslatePro/assets/76017191/791bdc48-b743-43f8-b783-5b98c12945ca
+
+
 ## Features
 
 - **Create and Edit Notes**: Users can easily create new notes by providing a title and content. Existing notes can be edited to update the title or content as needed.
